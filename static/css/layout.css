@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+/* Main Page Layout */
+
+#main-content {
+  margin-top: 75px;
+  display: flex;
+  gap: 96px;
+}
+
+
+
+
+/* Portfolio Header */
+
+#header {
+  gap: 20px;
+  width: 100%;
+  min-height: 600px;
+}
+
+
+#header-bg {
+  background-image: url('../image/ucsd_bg.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.4)
+}
+
+#header-text-container {
+  gap: 34px;
+  flex-basis: 100%;
+  position: relative; 
+  top: 50%; 
+  transform: translateY(-50%);
+}
+
+.title-text{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
