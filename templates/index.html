@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/typography.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/utilities.css') }}">
 
-		<script defer src="./js/script.js"></script>
+		<script src="{{url_for('static', filename='scripts/script.js')}}"></script>
 	</head>
 	<body>
 
-    <div id="main-content">
+    <!-- <div id="main-content">
       <div id="header">
         <div id = "header-bg">
             <div id="header-text-container">
@@ -31,15 +31,81 @@
             </div>
         </div>
       </div>
+    </div> -->
+    <div class="demo-wrap">
+      <img
+        class="demo-bg"
+        src="{{ url_for('static', filename='image/ucsd_bg.jpg') }}"
+        alt=""
+      >
+      <div class="demo-content">
+        <div class="title-text">
+          <span>Welcome to rent prediction around UCSD.</span>
+        </div>
+        <div class="body-text">
+          <div>This is based on the dataset provided by ... and used ... model to make a prediction.
+              Scroll down to input values that you are looking for!
+              Currently under development...
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="navbar">
-        <a class="nav-title-link">
-          <span class="nav-title">Rent price prediction around UCSD</span>
-          <a class="button" href="https://sunwoo604.github.io/">
-            <span class="button-text">My main portfolio</span>
-          </a>
+    <div id="input-section">
+      <div class="slidecontainer">
+        <a class = "slider_w_title">
+          <div class = 'input-instruction'>
+            <span class = 'input-instruction'>Bedrooms (select 0 - 5, 0 means studio) </span>
+          </div>
+          <input type="range" min="0" max="5" value="0" class="slider" id="bedSlider" onChange = "update_val(this.id)">
+          <span id="currBed">Currnet Value: 0</span>
         </a>
       </div>
+      <div class="slidecontainer">
+        <a class = "slider_w_title">
+          <div class = 'input-instruction'>
+            <span> Bathrooms (select 1 - 4) </span>
+          </div>
+          <input type="range" min="1" max="4" value="1" class="slider" id="bathSlider" onChange = "update_val(this.id)">
+          <span id="currBath">Currnet Value: 1</span>
+        </a>
+      </div>
+      <div class="slidecontainer">
+        <div class = 'input-instruction'>
+          <label class = 'input-instruction' for="city">Choose a city</label>
+        </div>
+        <select name="city" id="city-dropdown">
+          <option value="Bay Ho">Bay Ho</option>
+          <option value="Clairemont Mesa East">Clairemont Mesa East</option>
+          <option value="Clairemont Mesa West">Clairemont Mesa West</option>
+          <option value="Del Mar Heights">Del Mar Heights</option>
+          <option value="Kearny Mesa">Kearny Mesa</option>
+          <option value="La Jolla">La Jolla</option>
+          <option value="Linda Vista">Linda Vista</option>
+          <option value="Mira Mesa">Mira Mesa</option>
+          <option value="North Clairemont">Pacific Beach</option>
+          <option value="Sorrento Valley">Sorrento Valley</option>
+          <option value="University City">University City</option>
+        </select>
+      </div>
+    </div>
+    <div id="submit-result">
+      <div id="result-container">
+        <div id ='result'>
+          <span id="result-text">You have not yet submitted your values</span>
+        </div>
+      </div>
+      <div id='submit-button'>
+        <button id='submit-button' type="button" onclick="get_prediction()">Submit</button>
+      </div>
+    </div>
+    <div class="navbar">
+      <a class="nav-title-link">
+        <span class="nav-title">Rent price prediction around UCSD</span>
+        <a class="button" href="https://sunwoo604.github.io/">
+          <span class="button-text">My main portfolio</span>
+        </a>
+      </a>
+    </div>
 
 
 	</body>
