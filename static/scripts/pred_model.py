@@ -3,11 +3,13 @@ from sklearn.ensemble import RandomForestRegressor
 import numpy as np
 import pandas as pd
 import sklearn
+import os
 
 print(sklearn.__version__)
+print(os.getcwd())
 
 model = RandomForestRegressor(max_depth = 9,criterion = 'friedman_mse')
-model = load('static/model/randomforest_9_friedman.joblib')
+model = load(os.getcwd()+'/static/model/randomforest_9_friedman.joblib')
 cities = ['Bay Ho', 'Clairemont Mesa East', 'Clairemont Mesa West',
        'Del Mar Heights', 'Kearny Mesa', 'La Jolla', 'Linda Vista',
        'Mira Mesa', 'North Clairemont', 'Pacific Beach',
